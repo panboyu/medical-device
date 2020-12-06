@@ -19,9 +19,13 @@ class Info extends Component {
                 <img src={r1} className='info-r1 info-img' />
                 <img src={r2} className='info-r2 info-img' />
                 <img src={r3} className='info-r3 info-img' />
-                {/* <div className="info-benefit">
+                <div className="info-benefit">
                     <img src={xyImg} />
-                </div> */}
+                    <div className='benefit-content'>
+                        <div className='benefit-per'>65<span className='benefit-unit'>%</span></div>
+                        <div className='benefit-des'>当年任务完成</div>
+                    </div>
+                </div>
             </div>
         )
     }
