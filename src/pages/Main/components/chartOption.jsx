@@ -30,7 +30,10 @@ export const polarOption = {
         formatter: '{b}: {c}',
         axisPointer : {            
             type : 'shadow'
-        }
+        },
+        textStyle: {
+            fontSize: nowSize(14),
+        },
     },
     
     radiusAxis: {
