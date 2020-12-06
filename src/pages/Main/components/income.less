@@ -1,0 +1,81 @@
+.income-page{
+    width: 100%;
+    height: 100%;
+    padding: 60px 50px;
+    background: url('../../../images/income.png');
+    background-size: 100% 100%;
+    .income-title{
+        color: #77D2FA;
+        font-weight: 500;
+        font-size: clamp(18px, 0.9vw, 0.9vw);
+    }
+    .income-trend{
+        height: 28%;
+        display: flex;
+        flex-direction: column;
+    }
+    .income-line{
+        height: 7%;
+        display: flex;
+        padding: 0 7%;
+        align-items: center;
+    }
+    .income-line-item{
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(to right, rgba(154,225,253, 0), #9AE1FD, rgba(154,225,253, 0));
+    }
+    .income-year{
+        height: 100%;
+        overflow-y: auto;
+    }
+    .year-item{
+        width: 100%;
+        display: flex;
+        height: 16.5%;
+        align-items: center;
+        .year-label{
+            width: 15%;
+            color: #fff;
+            font-size: clamp(14px, 0.8vw, 0.8vw);
+        }
+        .year-outer{
+            width: 80%;
+            height: 30%;
+            display: flex;
+            position: relative;
+            align-items: center;
+        }
+        .year-inner{
+            height: 100%;
+            border-radius: 15px;
+            display: inline-block;
+            background: linear-gradient(to right, #405363, #9AE1FD);
+        }
+        .year-value{
+            margin-left: 10px;
+            font-size: clamp(14px, 0.7vw, 0.7vw);
+            color: #5DA6C6;
+        }
+    }
+    .income-cost{
+        height: 65%;
+        position: relative;
+    }
+    .income-title2{
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+    .income-chart{
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding-top: 50px;
+        &::after{
+            content: '';
+            padding-top: 100%;
+        }
+    }
+}

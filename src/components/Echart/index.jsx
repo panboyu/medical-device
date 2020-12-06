@@ -8,11 +8,8 @@ class Echart extends React.Component {
     componentDidMount() { 
         const { opts, callback } = this.props
         this.chart = echarts.init(this.el, null, opts)
-        //  渲染完成回调
-        this.chart.on('finished', () => { 
-            callback && callback(this.chart.getModel().getComponent('xAxis').axis.scale)
-        })
         this.setOption(this.props.option)
+        callback && callback(this.chart)
         window.addEventListener('resize', this.resize)
     }
 
