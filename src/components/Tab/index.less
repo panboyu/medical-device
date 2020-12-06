@@ -1,0 +1,90 @@
+.tab-page{
+    width: 56px;
+    overflow: hidden;
+    .tab-group-outside{
+        width: 100px;
+        height: 240px;
+        overflow-y: auto;
+    }
+    .tab-group-container{
+        height: 256px;
+        padding: 8px 0;
+        position: relative;
+    }
+    .tab-arrow{
+        width: 36px;
+        z-index: 99;
+        cursor: pointer;
+        position: absolute;
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+    .arrow-up{
+        top: 0;
+        left: 0;
+    }
+    .arrow-down{
+        left: 0;
+        bottom: 0;
+    }
+    .tab-select{
+        width: 36px;
+        .select-content{
+            width: 36px;
+            height: 24px;
+            color: #FFFFFF;
+            line-height: 24px;
+            text-align: center;
+            background: #01C7FE;
+            border-bottom: 2px solid #232A42;
+        }
+        .select-arrow{
+            width: 36px;
+            cursor: pointer;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+    .tab-group{
+        width: 36px;
+        background: #232A42;
+        .ant-radio-button-wrapper{
+            border: 0;
+            padding: 0;
+            width: 100%;
+            width: 36px;
+            height: 24px;
+            font-size: 14px;
+            color: #262D45;
+            line-height: 24px;
+            text-align: center;
+            background: #4C5264;
+            border-bottom: 2px solid #232A42;
+            &::before{
+                width: 0;
+            }
+        }
+        .ant-radio-button-wrapper:hover, .ant-radio-button-wrapper-focused{
+            color: #FFFFFF;
+            background: #01C7FE;
+        }
+        .ant-radio-button-wrapper-checked{
+            color: #FFFFFF;
+            box-shadow: none;
+            background: #01C7FE;
+        }
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover{
+            border: 0;
+            color: #FFFFFF;
+            background: #01C7FE;
+        }
+        .ant-radio-button-wrapper:first-child,
+        .ant-radio-button-wrapper:last-child{
+            border-radius: 0;
+        }
+    }
+}
