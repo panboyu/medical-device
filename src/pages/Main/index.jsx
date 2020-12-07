@@ -3,6 +3,7 @@ import './index.less'
 
 import Income from './components/income'
 import Info from './components/info'
+import DeviceWorkload from './components/deviceWorkload'
 
 class Main extends Component {
     render() {
@@ -17,7 +18,12 @@ class Main extends Component {
                             <Info />
                         </div>
                         <div className="main-chart">
-                            
+                            <div className="main-chart-item">
+                                <DeviceWorkload />
+                            </div>
+                            <div className="main-chart-item"></div>
+                            <div className="main-chart-item"></div>
+                            <div className="main-chart-item"></div>
                         </div>
                     </div>
                 </div>
