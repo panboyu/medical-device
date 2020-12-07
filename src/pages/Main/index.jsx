@@ -17,7 +17,7 @@ class Main extends Component {
                             <Info />
                         </div>
                         <div className="main-chart">
-
+                            
                         </div>
                     </div>
                 </div>
