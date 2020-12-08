@@ -1,0 +1,152 @@
+.dash-board-page{
+    width: 100%;
+    height: 100%;
+    padding: 12% 7% 0;
+    position: relative;
+    .dash-wrap{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 15px;
+        background: #353D47;
+        box-sizing: border-box;
+        padding-top: 15%;
+    }
+    .dash-title{
+        top: -6%;
+        left: 50%;
+        width: 70%;
+        position: absolute;
+        transform: translate(-50%, 0);
+        img{
+            width: 100%;
+        }
+    }
+    .dash-title-content{
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        color: #29363F;
+        text-align: center;
+        position: absolute;
+        font-weight: 500;
+        transform: translate(-50%, -55%);
+        font-size: clamp(14px, 0.8vw, 0.8vw);
+    }
+    .dash-wrap{
+        display: flex;
+        flex-direction: column;
+    }
+    .dash-panel{
+        width: 100%;
+        text-align: center;
+    }
+    .panel-bg{
+        bottom: 0;
+        left: 7.5%;
+        width: 85%;
+        position: absolute;
+    }
+    .dash-per-item{
+        display: flex;
+        align-items: center;
+    }
+    .dash-label{
+        width: 25%;
+        color: #8FB9C5;
+        text-align: center;
+        font-size: clamp(14px, 0.6vw, 0.6vw);
+    }
+    .dash-outer{
+        width: 50%;
+        height: 0.4vw;
+        position: relative;
+    }
+    .dash-inner{
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 15px;
+        position: absolute;
+        background: linear-gradient(to right, #405363, #9AE1FD);
+    }
+    .dash-value{
+        width: 25%;
+        color: #8FB9C5;
+        text-align: center;
+        font-size: clamp(14px, 0.6vw, 0.6vw);
+    }
+    .dash-earnings{
+        padding: 5% 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .dash-earnings-a{
+        line-height: 1;
+        color: #8FB9C5;
+        font-size: clamp(14px, 0.6vw, 0.6vw);
+    }
+    .dash-earnings-b{
+        line-height: 1;
+        color: #FBBA89;
+        font-family: finishFont;
+        font-size: clamp(16px, 1.5vw, 1.5vw);
+    }
+    .dash-arrow{
+        left: 50%;
+        width: 5%;
+        bottom: 0;
+        position: absolute;
+        transform: translate(-50%, 0) rotate(-45deg);
+        transform-origin: 50% 100%;
+    }
+    .dash-panel-inner{
+        left: 50%;
+        width: 3vw;
+        height: 3vw;
+        bottom: -1.5vw;
+        color: #8FB9C5;
+        border-radius: 50%;
+        position: absolute;
+        background: #213244;
+        transform: translate(-50%, 0);
+        font-size: clamp(14px, 0.55vw, 0.55vw);
+        span{
+            left: 0;
+            top: 13%;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+        }
+    }
+    .dash-border{
+        width: 8%;
+        position: absolute;
+    }
+    .dash-l1{
+        top: -3%;
+        left: -3%;
+    }
+    .dash-l2{
+        top: 20%;
+        left: -3%;
+    }
+    .dash-l3{
+        left: -3%;
+        bottom: -3%;
+    }
+    .dash-r1{
+        top: -3%;
+        right: -3%;
+    }
+    .dash-r2{
+        top: 27%;
+        right: -3%;
+    }
+    .dash-r3{
+        right: -3%;
+        bottom: -3%;
+    }
+}
