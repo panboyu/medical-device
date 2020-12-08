@@ -3,13 +3,20 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     .device-title{
+        margin: 3% 0;
         color: #76CEF5;
-        font-size: clamp(20px, 1.1vw, 1.1vw);
+        font-size: clamp(20px, 1vw, 1vw);
+    }
+    .device-table{
+        flex: 1;
+        overflow-y: auto;
     }
     .device-th{
         height: 12%;
         color: #4D75B7;
+        margin-bottom: 3%;
         background: #213244;
         border: 1px solid #283C4E;
         font-size: clamp(16px, 0.7vw, 0.7vw);
@@ -37,6 +44,7 @@
     .device-td{
         height: 12%;
         color: #82C5CE;
+        margin-bottom: 3%;
         background: #213244;
         border: 1px solid #283C4E;
         font-size: clamp(16px, 0.7vw, 0.7vw);

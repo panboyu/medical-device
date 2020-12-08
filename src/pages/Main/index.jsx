@@ -21,7 +21,9 @@ class Main extends Component {
                             <div className="main-chart-item">
                                 <DeviceWorkload />
                             </div>
-                            <div className="main-chart-item"></div>
+                            <div className="main-chart-item">
+                                
+                            </div>
                             <div className="main-chart-item"></div>
                             <div className="main-chart-item"></div>
                         </div>
