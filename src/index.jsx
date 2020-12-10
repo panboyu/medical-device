@@ -10,12 +10,7 @@ import Router from './router'
 
 const history = createHistory()
 const store = configStore(history)
-history.listen((location, action) => {
-    // 路由变化终止之前页面请求
-    sourceArr.map((item)=>item.type!=='public'&&Object.values(item)[0]())
-    sourceArr.filter(item=>item.type=='public')
-    // sourceArr=[];
-  })
+
 const render = Component => {
     /**
      * react-router 4.0开始不提供hashStory和browserStory

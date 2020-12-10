@@ -43,10 +43,12 @@ class Info extends Component {
                 </div>
                 <div className="info-middle">
                     <div className="info-number">
-                        <img src={numberBg} />
-                        <div className='info-content-des'>
-                            <div className='info-number-content'>0003600000</div>
-                            <div className='info-number-des'>本年总检查人数</div>
+                        {/* <img src={numberBg} /> */}
+                        <div className="check-total">
+                            <div className='info-content-des'>
+                                <div className='info-number-content'>0003600000</div>
+                                <div className='info-number-des'>本年总检查人数</div>
+                            </div>
                         </div>
                     </div>
                     <div className="info-rate">

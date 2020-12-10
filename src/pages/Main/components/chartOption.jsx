@@ -225,7 +225,7 @@ export const barOption = {
     series: {
         name: '本年检查人次 (万)',
         type: 'bar',
-        barWidth: '30%',
+        barWidth: '20%',
         itemStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
