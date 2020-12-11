@@ -1,32 +1,37 @@
 import React, { Component } from 'react'
 import './income.less'
 import Echart from 'components/Echart'
-import { polarOption} from './chartOption'
+import { polarOption } from './chartOption'
+import utils from 'utils/common'
 
 class Income extends Component {
 
-    renderYear = (year = 2020, p = 50, value = 50) => { 
+    renderYear = (year = 2020, value = 0, max) => { 
+        let percentage = value/max * 100 * 0.9
         return <div className='year-item'>
             <span className='year-label'>{year}</span>
             <span className='year-outer'>
-                <span className='year-inner' style={{ width: p + '%' }}></span>
-                <span className='year-value'>{value}</span>
+                <span className='year-inner' style={{ width: percentage + '%' }}></span>
+                <span className='year-value'>{utils.keepTwo(value)}</span>
             </span>
         </div>
     }
 
     render() {
+        const { data = [] } = this.props
+        let max = data.length ? data.sort((a, b) => { 
+            return b.income - a.income
+        })[0].income : 0
         return (
             <div className='income-page'>
                 <div className='income-trend'>
                     <div className='income-title'>年收入趋势</div>
                     <div className='income-year'>
-                        {this.renderYear()}
-                        {this.renderYear(2019,80,80)}
-                        {this.renderYear(2018,70,70)}
-                        {this.renderYear(2017,60,60)}
-                        {this.renderYear(2016,30,30)}
-                        {this.renderYear(2015,15,15)}
+                        {
+                            data.map(item => { 
+                                return this.renderYear(item.year, item.income, max)
+                            })
+                        }
                     </div>
                 </div>
                 <div className="income-line">

@@ -51,6 +51,9 @@ const utils = {
             r = moment.unix(time).format("MM-DD HH:mm")
         }  
         return r
+	},
+	keepTwo(value) { 
+		return Math.round(value * 100) / 100
 	}
 }
 

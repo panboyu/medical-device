@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const process = require('process')
 const { version, vendorVersion, resolve, plugins, vendorPath } = require('./config')
 
-const port = 3001
+const port = 3003
 const host = '0.0.0.0'
 const env = process.env.NODE_ENV
 
@@ -42,8 +42,8 @@ plugins.push(
 const proxy = {
     secure: false,
     changeOrigin: true,
-    target: 'http://192.168.199.231:9002',
-    pathRewrite: { "^/api": "" },
+    target: 'http://47.108.200.114:6688',
+    pathRewrite: { "^/": "" },
 }
 
 module.exports = {

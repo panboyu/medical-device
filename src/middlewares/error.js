@@ -1,4 +1,3 @@
-import { message } from 'antd'
 import { TOKEN, local } from 'src/utils/storage'
 export default function errorMiddleware({ dispatch }) {
     return next => action => {
@@ -10,7 +9,6 @@ export default function errorMiddleware({ dispatch }) {
                     
                 } else if (data.status == 10) {     // token失效
                     local.removeItem(TOKEN)
-                    window.location.href = '/login'
                 }
             } else { 
                 if (payload instanceof Error) {
