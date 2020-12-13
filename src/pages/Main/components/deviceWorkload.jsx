@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import './deviceWorkload.less'
 
 class DeviceWorkload extends Component {
-    renderItem = () => { 
+    renderItem = item => { 
         return <div className="device-td">
-            <span className='th1'>MRI(1号机)</span>
-            <span className='th2'>10.03.011.1209001</span>
-            <span className='th3'>西门子</span>
-            <span className='th4'>71245</span>
+            <span className='th1'>{item.name}</span>
+            <span className='th2'>{item.sn}</span>
+            <span className='th3'>{item.brand}</span>
+            <span className='th4'>{item.year_inspection_times}</span>
         </div>
     }
     render() {
-        const arr = [1,2,3,4,5]
+        const { data } = this.props
         return (
             <div className='device-workload-page'>
                 <div className="device-title">本年设备工作量排行(前10)</div>
@@ -26,8 +26,8 @@ class DeviceWorkload extends Component {
                         </span>
                     </div>
                     {
-                        arr.map(() => { 
-                            return this.renderItem()
+                        data.map(item => { 
+                            return this.renderItem(item)
                         })
                     }
                 </div>

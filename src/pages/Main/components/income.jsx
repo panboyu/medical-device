@@ -18,10 +18,27 @@ class Income extends Component {
     }
 
     render() {
-        const { data = [] } = this.props
+        const { data = [], series } = this.props
         let max = data.length ? data.sort((a, b) => { 
             return b.income - a.income
         })[0].income : 0
+        let dataName = []
+        let dataCost = []
+        series.forEach(item => { 
+            dataName.push(item.cost_item)
+            dataCost.push(item.cost)
+        })
+        let option = {
+            ...polarOption,
+            radiusAxis: {
+                ...polarOption.radiusAxis,
+                data: dataName,
+            },
+            series: {
+                ...polarOption.series,
+                data: dataCost,
+            }
+        }
         return (
             <div className='income-page'>
                 <div className='income-trend'>
@@ -40,7 +57,7 @@ class Income extends Component {
                 <div className='income-cost'>
                     <div className='income-title income-title2'>总成本构成</div>
                     <div className='income-chart'>
-                        <Echart option={polarOption} />
+                        <Echart option={option} />
                     </div>
                 </div>
             </div>

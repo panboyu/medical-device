@@ -6,7 +6,6 @@ function nowSize(val, initWidth = 1920) {
 
 export const polarOption = {
     angleAxis: {
-        max: 30,
         startAngle: 90,
         splitLine: {
             show: false
@@ -49,18 +48,18 @@ export const polarOption = {
         axisLine:{
             show: false,
         },
-        data: ['管理费', '水电费', '耗材费', '人员工资', '维修费', '折旧成本'],
+        data: [],
         z: 10
     },
     polar: {
     },
-    series: [{
+    series: {
         type: 'bar',
         label: {
             show: true,
         },
         coordinateSystem: 'polar',
-        data: [15, 12, 13, 14, 15, 20],
+        data: [],
         roundCap: true,
         barWidth: '30%',
         name: '总构成成本',
@@ -74,8 +73,7 @@ export const polarOption = {
                     ]
                 )
         },
-        
-    }],
+    },
 }
 
 export const costOption = {

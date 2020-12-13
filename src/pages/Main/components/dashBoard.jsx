@@ -10,8 +10,19 @@ import r1 from 'images/dashr1.png'
 import r2 from 'images/dashr2.png'
 import r3 from 'images/dashr3.png'
 
+import utils from 'utils/common'
+
+const removeMark = (val) => { 
+    return val ? +val.replace(/%$/gi, '') : val
+}
+
 class DashBoard extends Component {
     render() {
+        const { data = {} } = this.props
+        const max = data.total_income > data.total_cost ? data.total_income : data.total_cost
+        const per1 = data.total_income / max * 100 * 0.9
+        const per2 = data.total_cost / max * 100 * 0.9
+        const rate = removeMark(data.use_rate) * 1.8
         return (
             <div className='dash-board-page'>
                 <div className="dash-wrap">
@@ -22,27 +33,27 @@ class DashBoard extends Component {
                     <div className="dash-per">
                         <div className='dash-per-item'>
                             <span className='dash-label'>总收入</span>
-                            <span className='dash-outer'><span className='dash-inner'></span></span>
-                            <span className='dash-value'>1000万元</span>
+                            <span className='dash-outer'><span style={{ width: per1 + '%' }} className='dash-inner'></span></span>
+                            <span className='dash-value'>{utils.keepTwo(data.total_income)}万元</span>
                         </div>
                         <div className='dash-per-item'>
                             <span className='dash-label'>总成本</span>
-                            <span className='dash-outer'><span className='dash-inner'></span></span>
-                            <span className='dash-value'>610万元</span>
+                            <span className='dash-outer'><span style={{ width: per2 + '%' }} className='dash-inner'></span></span>
+                            <span className='dash-value'>{utils.keepTwo(data.total_cost)}万元</span>
                         </div>
                     </div>
                     <div className='dash-earnings'>
                         <span className='dash-earnings-a'>收益率</span>
                         <span>
-                            <span className='dash-earnings-b'>39%</span>
+                            <span className='dash-earnings-b'>{data.yield_rate}</span>
                             <span className='dash-earnings-a'>   x   </span>
-                            <span className='dash-earnings-b'>004</span>
+                            <span className='dash-earnings-b'>{data.item_count}</span>
                         </span>
                         <span className='dash-earnings-a'>台</span>
                     </div>
                     <div className='dash-panel'>
                         <img src={panelBg} className='panel-bg'/>
-                        <img src={arrow} className='dash-arrow' />
+                        <img src={arrow} style={{ transform: `translate(-50%, 0) rotate(${-90 + rate}deg)` }} className='dash-arrow' />
                         <span className='dash-panel-inner'>
                             <span>利用率</span>
                         </span>

@@ -58,10 +58,10 @@
             color: #FAAE7A;
             font-family: percentageFont;
             text-shadow: 0px 0px 15px #FAAE7A;
-            font-size: clamp(30px, 3.5vw, 3.5vw);
+            font-size: clamp(20px, 3vw, 3vw);
         }
         .benefit-unit{
-            font-size: clamp(30px, 1.5vw, 1.5vw);
+            font-size: clamp(20px, 1.5vw, 1.5vw);
         }
         .benefit-des{
             color: #77D2FA;
@@ -137,8 +137,8 @@
         top: 0;
         left: 0;
         height: 100%;
+        max-width: 100%;
         position: absolute;
-        width: 50%;
         border-radius: 25px;
         background: linear-gradient(to right, rgba(154,225,253, 0), #9AE1FD);
     }
@@ -193,6 +193,7 @@
         top: 10%;
         right: 2%;
         width: 45%;
+        overflow: hidden;
         position: absolute;
         font-size: clamp(14px, 0.6vw, 0.6vw);
         display: flex;
