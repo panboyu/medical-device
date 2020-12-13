@@ -42,6 +42,18 @@ class Main extends Component {
             deparRank,
             sixCate,
         } = this.props
+        let trendData = []
+        let trendX = []
+        twelveMonthList.forEach(item => { 
+            trendX.push(item.month)
+            trendData.push(item.inspection_times)
+        })
+        let curData = []
+        let curX = []
+        deparRank.forEach(item => { 
+            curX.push(item.name)
+            curData.push(item.inspection_times)
+        })
         return (
             <div className='main-page'>
                 <div className='main-up'>
@@ -57,13 +69,13 @@ class Main extends Component {
                                 <DeviceWorkload data={workloadRank} />
                             </div>
                             <div className="main-chart-item">
-                                <Cost />
+                                <Cost data={twelveMonthList} />
                             </div>
                             <div className="main-chart-item">
-                                <BarChart />
+                                <BarChart title='检查人次近12月趋势' xData={trendX} data={trendData} />
                             </div>
                             <div className="main-chart-item">
-                                <BarChart />
+                                <BarChart title='科室当年工作量排行(前10)' xData={curX} data={curData} legend='本年检查人次 (万)' />
                             </div>
                         </div>
                     </div>

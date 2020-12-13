@@ -98,7 +98,7 @@ export const costOption = {
         data: ['成本', '收入 (万元)']
     },
     xAxis: {
-        data: ['1月', '2月', '3月','4月', '5月', '6月','7月', '8月', '9月'],
+        data: [],
         splitLine: {
             show: false
         },
@@ -140,7 +140,7 @@ export const costOption = {
             itemStyle: {
                 color: '#FE0000'
             },
-            data: [115, 120, 130, 120, 145, 160, 120, 170, 150],
+            data: [],
         },
         {
             name: '成本',
@@ -152,7 +152,7 @@ export const costOption = {
             itemStyle: {
                 color: '#1F91FC'
             },
-            data: [50, 70, 75, 55, 60, 80, 90, 60, 55],
+            data: [],
             areaStyle: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                     offset: 0,
@@ -170,12 +170,15 @@ export const barOption = {
     title: {
         top: '5%',
         left: '3%',
-        text: '检查人次近12月趋势',
+        text: '',
         textStyle: {
             color: '#77D2FA',
             fontWeight: 500,
             fontSize: nowSize(20),
         },
+    },
+    tooltip: {
+        show: true,
     },
     legend: {
         top: '15%',
@@ -185,10 +188,10 @@ export const barOption = {
             fontSize: nowSize(12),
         },
         icon: 'roundRect',
-        data: ['本年检查人次 (万)']
+        data: []
     },
     xAxis: {
-        data: ['1月', '2月', '3月','4月', '5月', '6月','7月', '8月', '9月'],
+        data: [],
         splitLine: {
             show: false
         },
@@ -233,6 +236,6 @@ export const barOption = {
                 color: 'rgba(24,144,255,0)'
             }])
         },
-        data: [115, 120, 130, 120, 145, 160, 120, 170, 150],
+        data: [],
     },
 }
