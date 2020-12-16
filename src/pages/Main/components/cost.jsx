@@ -5,7 +5,7 @@ import './cost.less'
 
 class Cost extends Component {
     render() {
-        const { data } = this.props
+        const { data = [] } = this.props
         let xData = []
         let data1 = []
         let data2 = []

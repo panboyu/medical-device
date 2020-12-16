@@ -28,11 +28,6 @@ const config = {
       hideOnClick :true,
       clickable :true,
     },
-    on: {
-      slideChange: function () {
-        console.log(this.activeIndex);
-      },
-    }
 }
 
 class SwiperVert extends Component {
@@ -41,52 +36,31 @@ class SwiperVert extends Component {
         this.swiperRef.swiper.slideNext()
     }
     render() {
+        const { data = [] } = this.props
         return (
             <div className='swiper-page'>
-                <AwesomeSwiper ref={ref => (this.swiperRef = ref)} config={config} className="device-swiper">
+                <AwesomeSwiper
+                    ref={ref => (this.swiperRef = ref)}
+                    config={{
+                        ...config,
+                        on: {
+                            slideChange: function () {
+                                console.log(this.activeIndex);
+                            },
+                        }
+                    }}
+                    className="device-swiper">
                     <div className="swiper-cover"></div>
                     <img src={selectedImg} className='swiper-selected' />
                     <div className="swiper-wrapper">
-                        <div className="swiper-slide">
-                            <img src={slideBg} className='slide-bg' />
-                            <span>
-                                <span>超声</span>
-                                <span>x82</span>
-                                <span>131W</span>
-                            </span>
-                        </div>
-                        <div className="swiper-slide">
-                            <img src={slideBg} className='slide-bg' />
-                            <span>
-                                <span>超声</span>
-                                <span>x82</span>
-                                <span>131W</span>
-                            </span>
-                        </div>
-                        <div className="swiper-slide">
-                            <img src={slideBg} className='slide-bg' />
-                            <span>
-                                <span>超声</span>
-                                <span>x82</span>
-                                <span>131W</span>
-                            </span>
-                        </div>
-                        <div className="swiper-slide">
-                            <img src={slideBg} className='slide-bg' />
-                            <span>
-                                <span>超声</span>
-                                <span>x82</span>
-                                <span>131W</span>
-                            </span>
-                        </div>
-                        <div className="swiper-slide">
-                            <img src={slideBg} className='slide-bg' />
-                            <span>
-                                <span>超声</span>
-                                <span>x82</span>
-                                <span>131W</span>
-                            </span>
-                        </div>
+                        {
+                            data.map(item => { 
+                                return <div data-code={item.code} className="swiper-slide">
+                                    <img src={slideBg} className='slide-bg' />
+                                    <span>{item.code}</span>
+                                </div>
+                            })
+                        }
                     </div>
                 </AwesomeSwiper>
             </div>

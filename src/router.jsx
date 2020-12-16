@@ -19,7 +19,7 @@ class Routes extends React.Component {
 					<Switch>
 						<Route path='/main' component={Main} />
 						<Route path='/device' component={Device} />
-						<Redirect to={{ pathname: '/device', search: props.location.search }} />
+						<Redirect to={{ pathname: '/main', search: props.location.search }} />
 					</Switch>
 				</App>
 			</Switch>

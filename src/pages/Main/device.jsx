@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import './device.less'
+
+import * as actions from 'actions/Main/device'
+import reducers from 'reducers/Main/device'
+import { injectReducer } from 'src/utils/injectReducer'
+injectReducer('device', reducers)
+
 import Income from './components/income'
 import DeviceInfo from './components/deviceInfo'
 import Cost from './components/cost'
@@ -7,13 +14,19 @@ import BarChart from './components/barChart'
 import DeviceWorkload from './components/deviceWorkload'
 import SwiperVert from './components/swiperVert'
 
+
 class Device extends Component {
+    componentDidMount() { 
+        this.props.getItemList({ name: 'itemList' })
+    }
     render() {
+        const { itemList } = this.props
+        console.log(itemList)
         return (
             <div className='device-page'>
                 <div className="device-up">
                     <div className="device-scroll">
-                        <SwiperVert />
+                        <SwiperVert data={itemList} />
                     </div>
                     <div className="device-info">
                         <DeviceInfo />
@@ -47,4 +60,12 @@ class Device extends Component {
     }
 }
 
-export default Device
+export default connect(
+    ({ device }) => { 
+        return {
+            itemList: device.itemList,
+        }
+    }, {
+        ...actions
+    }
+)(Device)

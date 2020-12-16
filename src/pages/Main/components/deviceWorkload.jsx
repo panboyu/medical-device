@@ -11,7 +11,7 @@ class DeviceWorkload extends Component {
         </div>
     }
     render() {
-        const { data } = this.props
+        const { data = [] } = this.props
         return (
             <div className='device-workload-page'>
                 <div className="device-title">本年设备工作量排行(前10)</div>

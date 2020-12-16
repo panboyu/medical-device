@@ -18,7 +18,7 @@ class Income extends Component {
     }
 
     render() {
-        const { data = [], series } = this.props
+        const { data = [], series = [] } = this.props
         let max = data.length ? data.sort((a, b) => { 
             return b.income - a.income
         })[0].income : 0
