@@ -46,7 +46,7 @@ class Income extends Component {
                     <div className='income-year'>
                         {
                             data.map(item => { 
-                                return this.renderYear(item.year, item.income, max)
+                                return this.renderYear(item.year, item.income || item.cost, max)
                             })
                         }
                     </div>

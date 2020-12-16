@@ -51,9 +51,9 @@ class Info extends Component {
                     <div className="info-rate">
                         <div className="rate-title">同比收益率</div>
                         <div className="rate-item">
-                            <span className='rate-label'>累计总收入同比</span>
-                            <span className='rate-outer'><span style={{ width: removeMark(item.sum_income_rate) + '%' }} className='rate-inner'></span></span>
-                            <span className='rate-value'>{item.sum_income_rate}</span>
+                            <span className='rate-label'>当年利润率</span>
+                            <span className='rate-outer'><span style={{ width: removeMark(item.year_profit_rate) + '%' }} className='rate-inner'></span></span>
+                            <span className='rate-value'>{item.year_profit_rate}</span>
                         </div>
                         <div className="rate-item">
                             <span className='rate-label'>去年同比</span>

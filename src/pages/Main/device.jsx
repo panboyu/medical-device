@@ -19,14 +19,21 @@ class Device extends Component {
     componentDidMount() { 
         this.props.getItemList({ name: 'itemList' })
     }
+    getAllData = deviceId => { 
+        this.props.getItemCostTrend({ name: 'itemCostTrend', deviceId })
+        this.props.getItemCostPart({ name: 'itemCostPart', deviceId })
+    }
     render() {
-        const { itemList } = this.props
-        console.log(itemList)
+        const {
+            itemList,
+            itemCostTrend,
+            itemCostPart,
+        } = this.props
         return (
             <div className='device-page'>
                 <div className="device-up">
                     <div className="device-scroll">
-                        <SwiperVert data={itemList} />
+                        <SwiperVert callback={this.getAllData} data={itemList} />
                     </div>
                     <div className="device-info">
                         <DeviceInfo />
@@ -34,7 +41,7 @@ class Device extends Component {
                 </div>
                 <div className="device-down">
                     <div className="device-income">
-                        <Income/>
+                        <Income data={itemCostTrend} series={itemCostPart} />
                     </div>
                     <div className="device-chart">
                         <div className="device-chart-left">
@@ -64,6 +71,8 @@ export default connect(
     ({ device }) => { 
         return {
             itemList: device.itemList,
+            itemCostTrend: device.itemCostTrend,
+            itemCostPart: device.itemCostPart,
         }
     }, {
         ...actions

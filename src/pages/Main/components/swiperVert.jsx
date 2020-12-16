@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './swiperVert.less'
 
 import AwesomeSwiper from 'react-awesome-swiper'
@@ -8,7 +8,7 @@ import selectedImg from 'images/selected.png'
 const config = {
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 5000,
       stopOnLastSlide: false,
       disableOnInteraction: true,
     },
@@ -30,22 +30,18 @@ const config = {
     },
 }
 
-class SwiperVert extends Component {
-    swiperRef = null
-    goNext = () => {
-        this.swiperRef.swiper.slideNext()
-    }
+class SwiperVert extends PureComponent {
+
     render() {
-        const { data = [] } = this.props
+        const { data = [], callback } = this.props
         return (
             <div className='swiper-page'>
                 <AwesomeSwiper
-                    ref={ref => (this.swiperRef = ref)}
                     config={{
                         ...config,
                         on: {
                             slideChange: function () {
-                                console.log(this.activeIndex);
+                                callback && callback(data[this.realIndex].id)
                             },
                         }
                     }}
@@ -54,7 +50,7 @@ class SwiperVert extends Component {
                     <img src={selectedImg} className='swiper-selected' />
                     <div className="swiper-wrapper">
                         {
-                            data.map(item => { 
+                            data.map(item => {
                                 return <div data-code={item.code} className="swiper-slide">
                                     <img src={slideBg} className='slide-bg' />
                                     <span>{item.code}</span>
