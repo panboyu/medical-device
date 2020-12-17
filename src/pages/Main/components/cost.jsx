@@ -10,7 +10,7 @@ class Cost extends Component {
         let data1 = []
         let data2 = []
         data.forEach(item => { 
-            xData.push(item.month)
+            xData.push(item.month || item.date)
             data1.push(item.income)
             data2.push(item.cost)
         })

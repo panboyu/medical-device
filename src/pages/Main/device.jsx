@@ -60,6 +60,7 @@ class Device extends Component {
             curX.push(item.department)
             curData.push(item.num)
         })
+        console.log('=======>', trendX, trendData)
         return (
             <div className='device-page'>
                 <div className="device-up">
