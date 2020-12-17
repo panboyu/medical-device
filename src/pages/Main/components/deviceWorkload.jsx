@@ -4,10 +4,10 @@ import './deviceWorkload.less'
 class DeviceWorkload extends Component {
     renderItem = item => { 
         return <div className="device-td">
-            <span className='th1'>{item.name}</span>
+            <span className='th1'>{item.name || item.code}</span>
             <span className='th2'>{item.sn}</span>
             <span className='th3'>{item.brand}</span>
-            <span className='th4'>{item.year_inspection_times}</span>
+            <span className='th4'>{item.year_inspection_times || item.num}</span>
         </div>
     }
     render() {

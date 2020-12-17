@@ -97,7 +97,11 @@ export const costOption = {
         icon: 'roundRect',
         data: ['成本', '收入 (万元)']
     },
+    tooltip: {
+        show: true,
+    },
     xAxis: {
+        type: 'category',
         data: [],
         splitLine: {
             show: false
