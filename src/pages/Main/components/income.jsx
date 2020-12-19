@@ -18,7 +18,7 @@ class Income extends Component {
     }
 
     render() {
-        const { data = [], series = [] } = this.props
+        const { data = [], series = [], title='年收入趋势' } = this.props
         let max = data.length ? data.sort((a, b) => { 
             return b.income - a.income
         })[0].income : 0
@@ -42,7 +42,7 @@ class Income extends Component {
         return (
             <div className='income-page'>
                 <div className='income-trend'>
-                    <div className='income-title'>年收入趋势</div>
+                    <div className='income-title'>{title}</div>
                     <div className='income-year'>
                         {
                             data.map(item => { 

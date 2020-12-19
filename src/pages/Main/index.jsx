@@ -88,8 +88,8 @@ class Main extends Component {
                             })
                         }
                     </div>
-                    <img src={ arrowLeft} className='arrow-left'/>
-                    <img src={ arrowRight} className='arrow-right' />
+                    {/* <img src={ arrowLeft} className='arrow-left'/>
+                    <img src={ arrowRight} className='arrow-right' /> */}
                 </div>
             </div>
         )

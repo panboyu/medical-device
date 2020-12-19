@@ -14,9 +14,10 @@ export const polarOption = {
             show: false
         },
         axisLabel:{
+            margin: 0,
             show: true,
             color: '#fff',
-            fontSize: nowSize(16),
+            fontSize: nowSize(14),
         },
         axisLine:{
             show: false,

@@ -28,7 +28,6 @@ class Device extends Component {
         this.props.getItemWorkload({ name: 'itemWorkload', deviceId })
         this.props.getItemReturnrateYear({ name: 'itemReturnrateYear', deviceId })
         this.props.getItemIncomeInfo({ name: 'itemIncomeInfo', deviceId })
-
         this.props.getTotalReturnRate({ name: 'totalReturnRate', deviceId })
         this.props.getTotalSinglediaCount({ name: 'itemSinglediaCountYear', deviceId })
         this.props.getCompareReturnRate({ name: 'compareReturnRate', deviceId })
@@ -60,7 +59,6 @@ class Device extends Component {
             curX.push(item.department)
             curData.push(item.num)
         })
-        console.log('=======>', trendX, trendData)
         return (
             <div className='device-page'>
                 <div className="device-up">
@@ -73,7 +71,7 @@ class Device extends Component {
                 </div>
                 <div className="device-down">
                     <div className="device-income">
-                        <Income data={itemCostTrend} series={itemCostPart} />
+                        <Income data={itemCostTrend} series={itemCostPart} title='年成本趋势' />
                     </div>
                     <div className="device-chart">
                         <div className="device-chart-left">
