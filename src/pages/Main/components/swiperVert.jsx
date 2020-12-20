@@ -1,51 +1,36 @@
 import React, { PureComponent } from 'react'
 import './swiperVert.less'
 
-import AwesomeSwiper from 'react-awesome-swiper'
 import slideBg from 'images/slide.png'
 import selectedImg from 'images/selected.png'
 
-const config = {
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      stopOnLastSlide: false,
-      disableOnInteraction: true,
-    },
-    centeredSlides: true,
-    slidesPerView: 5,
-    preloadImages: false,
-    lazy: true,
-    speed: 500,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    direction : 'vertical',
-    pagination: {
-      el: '.swiper-pagination',
-      bulletElement : 'li',
-      hideOnClick :true,
-      clickable :true,
-    },
-}
+import Swiper from "swiper/dist/js/swiper"
+import "swiper/dist/css/swiper.css"
 
 class SwiperVert extends PureComponent {
+    
+    componentDidUpdate(preProps) { 
+        const { data, callback } = this.props
+        if (JSON.stringify(preProps.data) !== JSON.stringify(data)) { 
+            new Swiper ('.swiper-container',{
+                loop: true,
+                autoplay: 2000,
+                initialSlide: 2,
+                slidesPerView: 5,
+                direction: 'vertical',
+                centeredSlides: true,
+                onSlideChangeEnd: swipe => { 
+                    callback && callback(data[swipe.realIndex].id)
+                }
+            })
+        }
+    }
 
     render() {
-        const { data = [], callback } = this.props
+        const { data = [] } = this.props
         return (
             <div className='swiper-page'>
-                <AwesomeSwiper
-                    config={{
-                        ...config,
-                        on: {
-                            slideChange: function () {
-                                callback && callback(data[this.realIndex].id)
-                            },
-                        }
-                    }}
-                    className="device-swiper">
+                <div className="swiper-container device-swiper">
                     <div className="swiper-cover"></div>
                     <img src={selectedImg} className='swiper-selected' />
                     <div className="swiper-wrapper">
@@ -58,7 +43,7 @@ class SwiperVert extends PureComponent {
                             })
                         }
                     </div>
-                </AwesomeSwiper>
+                </div>
             </div>
         )
     }
