@@ -14,7 +14,7 @@ class SwiperVert extends PureComponent {
         if (JSON.stringify(preProps.data) !== JSON.stringify(data)) { 
             new Swiper ('.swiper-container',{
                 loop: true,
-                autoplay: 2000,
+                autoplay: 5000,
                 initialSlide: 2,
                 slidesPerView: 5,
                 direction: 'vertical',
