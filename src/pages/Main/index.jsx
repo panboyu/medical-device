@@ -12,12 +12,10 @@ import Info from './components/info'
 import DeviceWorkload from './components/deviceWorkload'
 import Cost from './components/cost'
 import BarChart from './components/barChart'
-import DashBoard from './components/dashBoard'
-import arrowLeft from 'images/arrowLeft.png'
-import arrowRight from 'images/arrowRight.png'
+import DashBoardList from './components/dashBoardList'
 
 class Main extends Component {
-    componentDidMount() { 
+    async componentDidMount() {
         //`年收入趋势
         this.props.getYearIncome({ name: 'hospitalYearIncome' })
         //  总成本构成
@@ -33,6 +31,7 @@ class Main extends Component {
         //  六台设备效率分析 
         this.props.getHospitalSixCategoryItems({ name: 'hospitalSixCategoryItems' })
     }
+
     render() {
         const {
             yearIncome, allCost,
@@ -44,13 +43,13 @@ class Main extends Component {
         } = this.props
         let trendData = []
         let trendX = []
-        twelveMonthList.forEach(item => { 
+        twelveMonthList.forEach(item => {
             trendX.push(item.month)
             trendData.push(item.inspection_times)
         })
         let curData = []
         let curX = []
-        deparRank.forEach(item => { 
+        deparRank.forEach(item => {
             curX.push(item.name)
             curData.push(item.inspection_times)
         })
@@ -81,15 +80,7 @@ class Main extends Component {
                     </div>
                 </div>
                 <div className='main-down'>
-                    <div className='main-down-wrap'>
-                        {
-                            sixCate.map(item => { 
-                                return <div className="dash-item"><DashBoard data={item} /></div>
-                            })
-                        }
-                    </div>
-                    {/* <img src={ arrowLeft} className='arrow-left'/>
-                    <img src={ arrowRight} className='arrow-right' /> */}
+                    <DashBoardList data={sixCate} />
                 </div>
             </div>
         )
@@ -97,7 +88,7 @@ class Main extends Component {
 }
 
 export default connect(
-    ({ main }) => { 
+    ({ main }) => {
         return {
             yearIncome: main.yearIncome,
             allCost: main.allCost,
@@ -108,6 +99,6 @@ export default connect(
             sixCate: main.sixCate,
         }
     }, {
-        ...actions
-    }
+    ...actions
+}
 )(Main)

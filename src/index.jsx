@@ -8,6 +8,8 @@ import { ConnectedRouter } from 'react-router-redux'
 
 import Router from './router'
 
+import "swiper/dist/css/swiper.css"
+
 const history = createHistory()
 const store = configStore(history)
 

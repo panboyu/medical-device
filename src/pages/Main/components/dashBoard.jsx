@@ -28,7 +28,7 @@ class DashBoard extends Component {
                 <div className="dash-wrap">
                     <div className="dash-title">
                         <img src={titleBg} />
-                        <span className='dash-title-content'>核磁共振成像系统</span>
+                        <span className='dash-title-content'>{data.name}</span>
                     </div>
                     <div className="dash-per">
                         <div className='dash-per-item'>

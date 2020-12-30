@@ -16,10 +16,10 @@ import SwiperVert from './components/swiperVert'
 
 
 class Device extends Component {
-    componentDidMount() { 
+    componentDidMount() {
         this.props.getItemList({ name: 'itemList' })
     }
-    getAllData = deviceId => { 
+    getAllData = deviceId => {
         this.props.getItemCostTrend({ name: 'itemCostTrend', deviceId })
         this.props.getItemCostPart({ name: 'itemCostPart', deviceId })
         this.props.getIncomeCostTrend({ name: 'incomeCostTrend', deviceId })
@@ -49,13 +49,13 @@ class Device extends Component {
         } = this.props
         let trendData = []
         let trendX = []
-        singlediaTrend.forEach(item => { 
+        singlediaTrend.forEach(item => {
             trendX.push(item.date)
             trendData.push(item.singledia_num)
         })
         let curData = []
         let curX = []
-        singleCount.forEach(item => { 
+        singleCount.forEach(item => {
             curX.push(item.department)
             curData.push(item.num)
         })
@@ -66,7 +66,7 @@ class Device extends Component {
                         <SwiperVert callback={this.getAllData} data={itemList} />
                     </div>
                     <div className="device-info">
-                        <DeviceInfo data={{returnrateYear, itemIncomeInfo, totalRate, totalSinglediaCount, compareRate}} />
+                        <DeviceInfo data={{ returnrateYear, itemIncomeInfo, totalRate, totalSinglediaCount, compareRate }} />
                     </div>
                 </div>
                 <div className="device-down">
@@ -98,7 +98,7 @@ class Device extends Component {
 }
 
 export default connect(
-    ({ device }) => { 
+    ({ device }) => {
         return {
             itemList: device.itemList,
             itemCostTrend: device.itemCostTrend,
@@ -114,6 +114,6 @@ export default connect(
             compareRate: device.compareRate,
         }
     }, {
-        ...actions
-    }
+    ...actions
+}
 )(Device)

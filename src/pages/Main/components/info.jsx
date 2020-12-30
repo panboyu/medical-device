@@ -11,7 +11,7 @@ import xyImg from 'images/xiaoyi.png'
 import numberBg from 'images/numberBg.png'
 import earningsBg from 'images/earnings.png'
 
-const removeMark = (val) => { 
+const removeMark = (val) => {
     return val ? +val.replace(/%$/gi, '') : val
 }
 
@@ -68,43 +68,44 @@ class Info extends Component {
                     </div>
                 </div>
                 <div className="info-earnings">
-                    <div className="earnings-wrap">
-                        <div className='earnings-bg'>
-                            <img src={earningsBg} />
-                            <span className='earnings-value'>
-                                {item.year_yield_rate}
-                                {/* <span className='earnings-unit'>%</span> */}
-                            </span>
+                    <div className="info-data">
+                        <div className='info-data-wrap'>
+                            <div className="data-item">
+                                <span className="data-label">总收入(万元): </span>
+                                <span className="data-value">{item.total_income}</span>
+                            </div>
+                            <div className="data-item">
+                                <span className="data-label">总成本(万元): </span>
+                                <span className="data-value">{item.total_cost}</span>
+                            </div>
                         </div>
-                        <div className='earnings-des'>本年收益率</div>
-                    </div>
-                    <div className="earnings-wrap">
-                        <div className='earnings-bg'>
-                            <img src={earningsBg} />
-                                <span className='earnings-value'>{item.last_year_yield_rate}
-                                    {/* <span className='earnings-unit'>%</span> */}
-                                </span>
+                        <div className="data-line"></div>
+                        <div className='info-data-wrap'>
+                            <div className="data-item">
+                                <span className="data-label">本年收入(万元): </span>
+                                <span className="data-value">{item.year_income}</span>
+                            </div>
+                            <div className="data-item">
+                                <span className="data-label">本年成本(万元): </span>
+                                <span className="data-value">{item.year_cost}</span>
+                            </div>
                         </div>
-                        <div className='earnings-des'>去年收益率</div>
                     </div>
-                </div>
-                <div className="info-data">
-                    <div className="data-item">
-                        <span className="data-label">总收入(万元): </span>
-                        <span className="data-value">{item.total_income}</span>
-                    </div>
-                    <div className="data-item">
-                        <span className="data-label">本年收入(万元): </span>
-                        <span className="data-value">{item.year_income}</span>
-                    </div>
-                    <div className='data-line'>|</div>
-                    <div className="data-item">
-                        <span className="data-label">总成本(万元): </span>
-                        <span className="data-value">{item.total_cost}</span>
-                    </div>
-                    <div className="data-item">
-                        <span className="data-label">本年成本(万元): </span>
-                        <span className="data-value">{item.year_cost}</span>
+                    <div className='earnings-content'>
+                        <div className="earnings-wrap">
+                            <div className='earnings-bg'>
+                                <img src={earningsBg} />
+                                <span className='earnings-value'>{removeMark(item.year_yield_rate)}<span className='earnings-unit'>%</span></span>
+                            </div>
+                            <div className='earnings-des'>本年收益率</div>
+                        </div>
+                        <div className="earnings-wrap">
+                            <div className='earnings-bg'>
+                                <img src={earningsBg} />
+                                <span className='earnings-value'>{removeMark(item.last_year_yield_rate)}<span className='earnings-unit'>%</span></span>
+                            </div>
+                            <div className='earnings-des'>去年收益率</div>
+                        </div>
                     </div>
                 </div>
             </div>

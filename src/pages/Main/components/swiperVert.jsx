@@ -5,21 +5,20 @@ import slideBg from 'images/slide.png'
 import selectedImg from 'images/selected.png'
 
 import Swiper from "swiper/dist/js/swiper"
-import "swiper/dist/css/swiper.css"
 
 class SwiperVert extends PureComponent {
-    
-    componentDidUpdate(preProps) { 
+
+    componentDidUpdate(preProps) {
         const { data, callback } = this.props
-        if (JSON.stringify(preProps.data) !== JSON.stringify(data)) { 
-            new Swiper ('.swiper-container',{
+        if (JSON.stringify(preProps.data) !== JSON.stringify(data)) {
+            new Swiper('.swiper-container', {
                 loop: true,
-                autoplay: 5000,
+                autoplay: 30000,
                 initialSlide: 2,
                 slidesPerView: 5,
                 direction: 'vertical',
                 centeredSlides: true,
-                onSlideChangeEnd: swipe => { 
+                onSlideChangeEnd: swipe => {
                     callback && callback(data[swipe.realIndex].id)
                 }
             })

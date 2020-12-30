@@ -1,72 +1,91 @@
-.main-page{
+.main-page {
     width: 100%;
     height: 100%;
     padding: 0 2vw;
-    .main-up{
+
+    .main-up {
         height: 67%;
         display: flex;
     }
-    .main-income{
+
+    .main-income {
         top: -1.5vw;
         width: 22.5%;
         display: flex;
         position: relative;
         height: calc(~"100% + 1.5vw");
     }
-    .income-img{
+
+    .income-img {
         width: 100%;
     }
-    .main-info-chart{
+
+    .main-info-chart {
         width: 77.5%;
         height: 100%;
         display: flex;
         padding-left: 70px;
         flex-direction: column;
-        .main-info{
+
+        .main-info {
             width: 100%;
             height: 50%;
         }
-        .main-chart{
+
+        .main-chart {
             width: 100%;
             height: 50%;
             display: flex;
-            .main-chart-item{
+
+            .main-chart-item {
                 width: 25%;
                 height: 100%;
             }
         }
     }
-    .main-down{
+
+    .main-down {
         width: 100%;
         height: 30%;
         position: relative;
     }
-    .main-down-wrap{
+
+    .main-down-wrap {
         width: 100%;
         height: 100%;
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        position: relative;
+
+        .swiper-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dash-item {
+            height: 100%;
+            width: 16.66%;
+            flex-shrink: 0;
+        }
     }
-    .dash-item{
-        height: 100%;
-        width: 16.66%;
-        flex-shrink: 0;
-    }
-    .arrow-left{
+
+    .arrow-left {
         top: 50%;
         width: 3%;
         z-index: 9;
         position: absolute;
         transform: translate(0, -50%);
     }
-    .arrow-right{
+
+    .arrow-right {
         top: 50%;
         right: 0;
         width: 3%;
         z-index: 9;
         position: absolute;
         transform: translate(0, -50%);
+    }
+
+    .dash-swiper {
+        color: #000;
+        font-size: 50px;
+        background: #fff;
     }
 }
